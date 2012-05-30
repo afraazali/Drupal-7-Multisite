@@ -211,7 +211,14 @@ $databases = array (
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
-      'prefix' => '',
+      'prefix' => array(
+        'default' => '',
+        'users' => 'local_drupalcamp_shared.',
+        'sessions' => 'local_drupalcamp_shared.',
+        'authmap' => 'local_drupalcamp_shared.',
+        'role' => 'local_drupalcamp_shared.',
+        'sequences' => 'local_drupalcamp_shared.',
+      ),
     ),
   ),
 );
@@ -325,7 +332,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * between your various domains. Make sure to always start the $cookie_domain
  * with a leading dot, as per RFC 2109.
  */
-# $cookie_domain = '.drupalcamp.dev';
+$cookie_domain = '.drupalcamp.dev';
 
 /**
  * Variable overrides:
